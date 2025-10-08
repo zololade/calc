@@ -18,6 +18,15 @@ function tryRemainder(a, b) {
   }
 }
 
+function tryMultiplication(a, b) {
+  let result = a * b;
+  if (result % 1 !== 0) {
+    return result.toFixed(2);
+  } else {
+    return result;
+  }
+}
+
 export default function operate(a, b, operator) {
   switch (operator) {
     case "plus":
@@ -30,7 +39,7 @@ export default function operate(a, b, operator) {
       return trydivision(a, b);
       break;
     case "multiply":
-      return a * b;
+      return tryMultiplication(a, b);
       break;
     case "remainder":
       return tryRemainder(a, b);
