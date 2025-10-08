@@ -2,6 +2,8 @@ function trydivision(a, b) {
   let result = a / b;
   if (result === Infinity) {
     return "Error";
+  } else if (result % 1 !== 0) {
+    return result.toFixed(2);
   } else {
     return result;
   }
