@@ -6,6 +6,7 @@ let operatorState = null;
 let currentOperator = null;
 let equalState = false;
 let oprandA = null;
+let oprandB = false;
 inputField.textContent = 0;
 
 btn.addEventListener("click", (e) => {
@@ -19,6 +20,7 @@ function handleClear() {
   operatorState = null;
   currentOperator = null;
   oprandA = null;
+  oprandB = false;
 }
 
 function handleDecimal(value) {
@@ -29,6 +31,9 @@ function handleDecimal(value) {
 }
 
 function handleDigit(value) {
+  if (oprandA) {
+    oprandB = true;
+  }
   if (
     (inputField.textContent === "0" || operatorState) &&
     !equalState
@@ -40,6 +45,7 @@ function handleDigit(value) {
     operatorState = null;
     currentOperator = null;
     oprandA = null;
+    oprandB = false;
     equalState = false;
   } else {
     inputField.textContent += value;
@@ -51,10 +57,10 @@ function handleOperator(value) {
   operatorState = value;
 
   //###########
-  if (oprandA === null) {
+  if (oprandA === null && sign !== "equals to") {
     oprandA = +inputField.textContent;
     currentOperator = sign;
-  } else if (oprandA || oprandA === 0) {
+  } else if ((oprandA || oprandA === 0) && oprandB) {
     if (sign !== "equals to" && equalState) {
       inputField.textContent = +inputField.textContent;
       currentOperator = sign;
@@ -73,6 +79,7 @@ function handleOperator(value) {
     }
   }
   //##########
+
   currentOperator = sign;
 }
 
