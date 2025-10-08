@@ -1,0 +1,80 @@
+*,
+*::before,
+*::after {
+  /* Use a more intuitive box-sizing model */
+  box-sizing: border-box;
+  /* https://www.youtube.com/watch?v=cH8VbLM1958 */
+  min-width: 0;
+  /* Remove all margins and padding */
+  margin: 0;
+  padding: 0;
+}
+
+/* Only show focus outline when the user is tabbing (not when clicking) */
+/* Except for input and textarea */
+/* *:focus:not(:is(input, textarea)) {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 1px solid blue;
+}
+
+strong {
+  overflow-wrap: break-word;
+} */
+
+/* Remove unintuitive behaviour such as gaps around media elements.  */
+/* img,
+picture,
+video,
+canvas,
+svg,
+iframe {
+  display: block;
+}
+
+input,
+textarea,
+button,
+button:disabled {
+  font: inherit;
+  color: inherit;
+  border: none;
+  border-radius: 0;
+  background: none;
+}
+
+fieldset {
+  border: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+} */
+
+/* For WebKit browsers: Chrome, Safari, Edge */
+.input::-webkit-scrollbar {
+  width: 0; /* kills the bar’s width */
+  height: 0; /* kills horizontal one */
+}
+
+.input::-webkit-scrollbar-thumb {
+  background: transparent; /* nothing to grab */
+}
+
+.input::-webkit-scrollbar-track {
+  background: transparent; /* nothing behind it */
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: none; /* hides both bar and track */
+  -ms-overflow-style: none; /* for older Edge/IE zombies */
+}

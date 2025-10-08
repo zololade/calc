@@ -1,0 +1,63 @@
+body {
+  min-width: 100vw;
+  min-height: 100vh;
+  align-content: center;
+  background-color: #121212;
+}
+
+.calc {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 22rem;
+  border: 1px solid white;
+}
+
+.calc .input {
+  text-align: right;
+  margin: 1rem;
+  padding-right: 0.5rem;
+  font-size: 2rem;
+  border-collapse: collapse;
+  border: 1px solid #888;
+  background-color: #fff6;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5) inset;
+  overflow: scroll;
+}
+
+.input-box {
+  border-bottom: 1px solid whitesmoke;
+}
+
+.btn {
+  display: flex;
+  flex-direction: column;
+}
+.btn > div:not(:last-of-type) {
+  border-bottom: 1px solid black;
+}
+.btn-section {
+  display: flex;
+  flex-direction: row;
+}
+
+.btn-section > button:not(:first-of-type) {
+  border-left: 1px solid black;
+}
+
+.btn-section > button {
+  border-collapse: collapse;
+  display: block;
+  font-size: 2rem;
+  border-radius: 0;
+}
+.btn > div:not(:first-child):not(:last-child) > button {
+  flex: 1;
+}
+.btn-section:last-of-type > button:not(button:first-of-type),
+.btn-section:first-of-type > button:not(button:first-of-type) {
+  flex: 1;
+}
+.grow {
+  flex: 2;
+}
