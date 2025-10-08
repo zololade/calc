@@ -1,3 +1,21 @@
+function trydivision(a, b) {
+  let result = a / b;
+  if (result === Infinity) {
+    return "Error";
+  } else {
+    return result;
+  }
+}
+
+function tryRemainder(a, b) {
+  let result = a % b;
+  if (isNaN(result)) {
+    return "Error";
+  } else {
+    return result;
+  }
+}
+
 export default function operate(a, b, operator) {
   switch (operator) {
     case "plus":
@@ -7,13 +25,13 @@ export default function operate(a, b, operator) {
       return a - b;
       break;
     case "divide":
-      return a / b;
+      return trydivision(a, b);
       break;
     case "multiply":
       return a * b;
       break;
     case "remainder":
-      return a % b;
+      return tryRemainder(a, b);
       break;
     case "equals to":
       return;

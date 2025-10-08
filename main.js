@@ -67,7 +67,7 @@ function handleOperator(value) {
       equalState = false;
       return;
     }
-    inputField.textContent = +operate(
+    inputField.textContent = operate(
       oprandA,
       +inputField.textContent,
       currentOperator
