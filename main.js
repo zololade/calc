@@ -60,7 +60,7 @@ function handleOperator(value) {
   if (oprandA === null && sign !== "equals to") {
     oprandA = +inputField.textContent;
     currentOperator = sign;
-  } else if ((oprandA || oprandA === 0) && oprandB) {
+  } else if ((oprandA && oprandB) || oprandA === 0) {
     if (sign !== "equals to" && equalState) {
       inputField.textContent = +inputField.textContent;
       currentOperator = sign;
