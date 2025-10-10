@@ -21,6 +21,7 @@ function handleClear() {
   currentOperator = null;
   oprandA = null;
   oprandB = false;
+  equalState = false;
 }
 
 function handleDecimal(value) {
